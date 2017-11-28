@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 /**
  * Handles requests for the application home page.
  */
+//한글 나오나 확인할게요
 @Controller
 public class HomeController {
 	
