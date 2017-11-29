@@ -19,7 +19,6 @@
  
  <style type="text/css" >
  	#mycontainer	{ margin:0 auto; }
-	#myheader		{ background-color:#EBEBE0; height: 100px; }
 	#mycontent		{ float:left; width:75%; background-color:#F5F5F5; min-height:800px; padding-top: 40px;}
 	#mysideinfo		{ float:left; width:25%;}
  
