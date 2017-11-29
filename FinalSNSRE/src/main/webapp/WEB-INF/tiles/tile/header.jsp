@@ -61,7 +61,7 @@
 			</ul></li>	 --%>	
 			<%-- <li style="margin-left:90%; margin-top:-70px;display:inline;"><a href="<%=request.getContextPath()%>/index.re"><img src="<%=request.getContextPath()%>/resources/images/alarm_white.png"></a></li> --%>
 		
-		<li class="dropdown" style="margin-left:90%; margin-top:-70px; display:inline;"><a class="dropdown-toggle"
+		<li class="dropdown" style="margin-left:85%; margin-top:-50px; display:inline;"><a class="dropdown-toggle"
 			data-toggle="dropdown" href="#"><img src="<%=request.getContextPath()%>/resources/images/alarm_white.png"> <span class="caret"></span></a>
 			<ul class="dropdown-menu">
 			
@@ -74,6 +74,7 @@
 				<li><img src="<%=request.getContextPath()%>/resources/images/follow_black.png">새로운팔로워</li>
 			
 		</ul></li>
+		<li style="margin-left:85%;margin-top:10px; margin-top:-60px; display:inline;"><a href="<%=request.getContextPath()%>/mypage.re"><img src="<%=request.getContextPath()%>/resources/images/user_white.png"></a></li>
 		
 		<!-- ===== #52. 로그인 성공한 사용자 성명 출력하기. ===== -->
 		<c:if test="${sessionScope.loginuser.status < 9 }">
