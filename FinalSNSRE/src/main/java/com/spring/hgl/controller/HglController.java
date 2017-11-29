@@ -8,6 +8,7 @@ import com.spring.hgl.service.InterHglService;
 
 @Controller
 @Component
+
 public class HglController {
 	@Autowired
 	private InterHglService service;
