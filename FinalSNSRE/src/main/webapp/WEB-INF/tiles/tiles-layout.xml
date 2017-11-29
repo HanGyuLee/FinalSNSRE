@@ -7,7 +7,9 @@
        "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
 
 <tiles-definitions>
-    <!-- tiles 를 사용하는 레이아웃 설정 시작 1 -->
+
+
+    <!-- 회원 레이아웃  -->
 	<definition name="layout-tiles"     template="/WEB-INF/tiles/layout/layout-tiles.jsp"> 
 		<put-attribute name="header"    value="/WEB-INF/tiles/tile/header.jsp" />
 		<put-attribute name="content"   value="" />
@@ -25,29 +27,31 @@
 	<definition name="*/*/*.tiles" extends="layout-tiles">
 		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}/{3}.jsp"/>
 	</definition>
-	<!-- tiles 를 사용하는 레이아웃 설정 끝 1 -->
+	<!-- 회원 레이아웃 설정 끝  -->
 	
 	
-	<!-- tiles 를 사용하는 레이아웃 설정 시작 2 -->
+	<!-- 관리자 레이아웃  설정 시작  -->
 	<definition name="layout-tiles2"     template="/WEB-INF/tiles/layout/layout-tiles2.jsp"> 
 		<put-attribute name="header"    value="/WEB-INF/tiles/tile/header.jsp" />
 		<put-attribute name="content"   value="" />
-		
+		<put-attribute name="noticeinfo"  value="/WEB-INF/tiles/tile/notice.jsp" />
 	</definition>
+	
 	
 	<definition name="*.tiles2" extends="layout-tiles2">
-		<put-attribute name="content" value="/WEB-INF/views2/{1}.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/{1}.jsp"/>
 	</definition>
 	<definition name="*/*.tiles2" extends="layout-tiles2">
-		<put-attribute name="content" value="/WEB-INF/views2/{1}/{2}.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
 	</definition>
 	<definition name="*/*/*.tiles2" extends="layout-tiles2">
-		<put-attribute name="content" value="/WEB-INF/views2/{1}/{2}/{3}.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}/{3}.jsp"/>
 	</definition>
-	<!-- tiles 를 사용하는 레이아웃 설정 끝 2 -->
-	
-	
-	<!-- tiles 를 사용하지 않는 레이아웃 설정 시작 -->
+	<!-- 관리자 레이아웃 설정 끝 -->
+
+
+
+	<!-- 회원 no 레이아웃 설정 시작 -->
 	<definition name="layout-notiles" template="/WEB-INF/tiles/layout/layout-notiles.jsp"> 
 		<put-attribute name="content" value="" />
 	</definition>
@@ -55,7 +59,23 @@
 	<definition name="*.notiles" extends="layout-notiles">
 		<put-attribute name="content" value="/WEB-INF/viewsnotiles/{1}.jsp"/>
 	</definition>
-	<!-- tiles 를 사용하지 않는 레이아웃 설정 끝 -->
+	<!--  회원 no 레이아웃 설정 끝-->
+	
+	
+	
+	<!-- 관리자 no 레이아웃 설정 시작 -->
+	<definition name="layout-notiles2" template="/WEB-INF/tiles/layout/layout-notiles2.jsp"> 
+		<put-attribute name="content" value="" />
+	</definition>
+	
+	<definition name="*.notiles2" extends="layout-notiles2">
+		<put-attribute name="content" value="/WEB-INF/viewsnotiles2/{1}.jsp"/>
+	</definition>
+	<!--  관리자 no 레이아웃 설정 끝-->
+	
+	
+	
+	
 	
 </tiles-definitions>       
 
