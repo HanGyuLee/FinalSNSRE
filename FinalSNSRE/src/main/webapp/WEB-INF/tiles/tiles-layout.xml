@@ -12,6 +12,7 @@
 		<put-attribute name="header"    value="/WEB-INF/tiles/tile/header.jsp" />
 		<put-attribute name="content"   value="" />
 		<put-attribute name="sideinfo"  value="/WEB-INF/tiles/tile/sideinfo.jsp" />
+		<put-attribute name="noticeinfo"  value="/WEB-INF/tiles/tile/notice.jsp" />
 		
 	</definition>
 	

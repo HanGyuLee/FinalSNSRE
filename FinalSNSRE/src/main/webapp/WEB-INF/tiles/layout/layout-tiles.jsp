@@ -16,7 +16,14 @@
       
   <script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/jquery-2.0.0.js"></script>
   <script type="text/javascript" src="<%=request.getContextPath() %>/resources/BootStrapStudy/js/bootstrap.js"></script>
-    
+ 
+ <style type="text/css" >
+ 	#mycontainer	{ margin:0 auto; }
+	#myheader		{ background-color:#EBEBE0; height: 100px; }
+	#mycontent		{ float:left; width:75%; background-color:#F5F5F5; min-height:800px; padding-top: 40px;}
+	#mysideinfo		{ float:left; width:25%;}
+ 
+ </style>    
 
 </head>
 
@@ -24,6 +31,9 @@
 	<div id="mycontainer">
 		<div id="myheader">
 			<tiles:insertAttribute name="header" />
+		</div>
+		<div id="mynoticeinf">
+		<tiles:insertAttribute name="noticeinfo" />
 		</div>
 	
 		<div id="mycontent">

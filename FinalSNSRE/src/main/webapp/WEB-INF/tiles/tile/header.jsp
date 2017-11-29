@@ -15,7 +15,7 @@
 
 %>
 
-<div align="center">
+<div align="center" style="background-color: black;">
 	<ul class="nav nav-tabs mynav">
 		<li class="dropdown"><a class="dropdown-toggle"
 			data-toggle="dropdown" href="#">Home <span class="caret"></span></a>
