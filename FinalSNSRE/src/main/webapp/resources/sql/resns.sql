@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 show user;
 
 select *
@@ -282,3 +283,6 @@ LOGIN_NAME : 별명
 
 ---------------------------------다희 끝----------------------------------------
 
+=======
+show user;
+>>>>>>> branch 'master' of https://github.com/HanGyuLee/FinalSNSRE.git
