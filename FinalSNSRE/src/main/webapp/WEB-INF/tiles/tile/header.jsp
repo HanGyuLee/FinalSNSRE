@@ -17,7 +17,20 @@
 
 <div align="center" style="background-color: black;">
 	<ul class="nav nav-tabs mynav">
-		
+		<li class="dropdown"><a class="dropdown-toggle"
+			data-toggle="dropdown" href="#">Home <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="<%=request.getContextPath()%>/index.action">홈</a></li>
+				<li><a href="<%=serverName%><%=request.getContextPath()%>/chatting/multichat.action">웹채팅</a></li>
+				<li><a href="#">Submenu 1-3</a></li>
+			</ul></li>
+		<li class="dropdown"><a class="dropdown-toggle"
+			data-toggle="dropdown" href="#">게시판 <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="<%=request.getContextPath()%>/list.action">목록보기</a></li>
+				<li><a href="<%=request.getContextPath()%>/add.action">글쓰기</a></li>
+				<li><a href="#">Submenu 2-3</a></li>
+			</ul></li>
 		<li class="dropdown"><a class="dropdown-toggle"
 			data-toggle="dropdown" href="#">주문(통계차트) <span class="caret"></span></a>
 			<ul class="dropdown-menu">
