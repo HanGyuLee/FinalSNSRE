@@ -23,6 +23,16 @@
 
 </style>
 
+<script type="text/javascript">
+
+function gologout(){
+	location.href="/resns/logout.re";
+}
+
+</script>
+
+
+
 
 <div align="center" style="background-color: black;">
 	<ul class="nav nav-tabs mynav">
@@ -77,13 +87,15 @@
 		<li style="margin-left:85%;margin-top:10px; margin-top:-60px; display:inline;"><a href="<%=request.getContextPath()%>/login.re"><img src="<%=request.getContextPath()%>/resources/images/user_white.png"></a></li>
 		
 		<!-- ===== #52. 로그인 성공한 사용자 성명 출력하기. ===== -->
-		<c:if test="${sessionScope.loginUser.login_status < 9 }">
+		<c:if test="${sessionScope.loginUser.login_status eq 1}">
 		<li style="margin-left: 35%; margin-top: 1%;">
 		♥ 환영합니다~ <span style="color: navy; font-weight: bold;">${sessionScope.loginUser.login_name}</span> 님  ♥
 		</li>
+		<br/>
+		<div><button type="button" id="logout" name="logout" class="btn btn-primary" onclick="gologout();">로그아웃</button></div>
 		</c:if>
 		
-		<c:if test="${sessionScope.loginUser.login_status >= 9}">
+		<c:if test="${sessionScope.loginUser.login_status eq 9}">
 		<li style="margin-left: 15%; margin-top: 1%;">
 		♥ 환영합니다~ <span style="color: navy; font-weight: bold;">${sessionScope.loginUser.login_name}</span> 님 ♥
 		</li>
