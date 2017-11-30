@@ -1,10 +1,11 @@
 package com.spring.pek.model;
 
+import java.util.HashMap;
 import java.util.List;
 
 
 public interface BoardDAO {
 
-	List<BoardVO> getBoardList();	// 인기 리스트 보기
+	List<HashMap<String, String>> getBoardList();	// 인기 리스트 보기
 
 }

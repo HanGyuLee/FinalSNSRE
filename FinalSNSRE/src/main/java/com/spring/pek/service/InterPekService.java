@@ -1,11 +1,11 @@
 package com.spring.pek.service;
 
+import java.util.HashMap;
 import java.util.List;
 
-import com.spring.pek.model.BoardVO;
 
 public interface InterPekService {
 
-	List<BoardVO> getBoardList();	// 인기 리스트 보기
+	List<HashMap<String, String>> getBoardList();	// 인기 리스트 보기
 
 }

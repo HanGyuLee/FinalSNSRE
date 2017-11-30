@@ -1,5 +1,10 @@
 package com.spring.pek.controller;
 
+import java.util.HashMap;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,10 +18,36 @@ public class PekController {
 	@Autowired
 	private InterPekService service;
 	
+	// 글 목록 보기 (인기페이지)
+	@RequestMapping(value = "/index.re", method = {RequestMethod.GET})
+	public String index(HttpServletRequest req) {
+		
+		
+		List<HashMap<String, String>> boardList = service.getBoardList();
+		
+		req.setAttribute("boardList", boardList);
+		
+		return "index.tiles";
+	}
+	
+	
 	
 	// 글 1개 보기 (상세페이지)
 	@RequestMapping(value = "/detailBoard.re", method = {RequestMethod.GET})
-	public String detailBoard() {
+	public String detailBoard(HttpServletRequest req) {
+		
+		// 아이디도 넘겨줘야 함
+		String seq_tbl_board = req.getParameter("seq_tbl_board");
+		
+		
+		/*필요한 거(비공개 아닌 글, 삭제되지 않은 회원, 신고당하지 않은 덧글)
+		
+		tbl_login : 별명
+		tbl_uimage : 프사 이미지
+		tbl_board : 내용, 시간
+		tbl_re : 덧글 (덧글 쓴 사람 프사, 별명)
+		tbl_tag : 태그
+		tbl_map : 위치*/
 		
 		
 		// 글 1개 select 메소드
