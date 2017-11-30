@@ -16,10 +16,18 @@ public class HglController {
 	private InterHglService service;
 	
 	@RequestMapping(value="/mypage.re", method={RequestMethod.GET})
-	public String mypage(){
+	public String mypage(){		
+		
+		return "hgl/mypage.tiles2";
+		
+	}// end of login
+	
+	
+	@RequestMapping(value="/mypage2.re", method={RequestMethod.GET})
+	public String mypage2(){
 		
 		
-		return "hgl/mypage.tiles";
+		return "hgl/mypage2.tiles2";
 		
 	}// end of login
 	

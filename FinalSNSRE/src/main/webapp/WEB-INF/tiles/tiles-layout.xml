@@ -59,6 +59,13 @@
 	<definition name="*.notiles" extends="layout-notiles">
 		<put-attribute name="content" value="/WEB-INF/viewsnotiles/{1}.jsp"/>
 	</definition>
+	<definition name="*/*.notiles" extends="layout-notiles">
+		<put-attribute name="content" value="/WEB-INF/viewsnotiles/{1}/{2}.jsp"/>
+	</definition>
+	<definition name="*/*/*.notiles" extends="layout-notiles">
+		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}/{3}.jsp"/>
+	</definition>
+	
 	<!--  회원 no 레이아웃 설정 끝-->
 	
 	
