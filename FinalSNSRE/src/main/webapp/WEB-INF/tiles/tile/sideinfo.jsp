@@ -17,7 +17,7 @@
 
 	$(document).ready(function() {
 		loopshowNowTime();
-		showRank();
+		
 	}); // end of ready(); ---------------------------------
 
 	function showNowTime() {
