@@ -27,7 +27,7 @@ public class SnsDAO implements InterSnsDAO {
 		@Override
 		public int loginEnd(HashMap<String, String> map) {
 			
-			int n = sqlsession.selectOne("board.loginEnd", map);
+			int n = sqlsession.selectOne("jdhresns.loginEnd", map);
 			return n;
 		}
 
