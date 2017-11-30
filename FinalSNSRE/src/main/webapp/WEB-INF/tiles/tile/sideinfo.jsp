@@ -17,7 +17,7 @@
 
 	$(document).ready(function() {
 		loopshowNowTime();
-		showRank();
+		
 	}); // end of ready(); ---------------------------------
 
 	function showNowTime() {
@@ -76,9 +76,6 @@
 	현재시각 :&nbsp; 
 	<div id="clock" style="display:inline;"></div>
 </div>
-<div id="displayRank" style="min-width: 90%; margin: 0 auto;  margin-top: 20px; margin-bottom: 70px; padding-left: 10px; padding-right: 10px;"></div>
-<div id="chart-container" style="min-width: 90%; min-height: 400px; margin: 0 auto; border: solid #F0FFFF 5px;"></div>
-	
 	
 	
 	
