@@ -17,18 +17,31 @@ public class SnsDAO implements InterSnsDAO {
 		@Autowired
 		private SqlSessionTemplate sqlsession;
 
+		
+		// 유저 정보
 		@Override
-		public LoginVO getLoinMember(String id) {
+		public UserVO getLoinMember(String id) {
 			
-			LoginVO loginvo = sqlsession.selectOne("jdhresns.getLoginMember", id);
-			return loginvo;
+			UserVO uservo = sqlsession.selectOne("jdhresns.getLoginMember", id);
+			return uservo;
 		}
 
+		// 로그인 체크
 		@Override
 		public int loginEnd(HashMap<String, String> map) {
 			
 			int n = sqlsession.selectOne("jdhresns.loginEnd", map);
 			return n;
+		}
+
+		
+		// 세션 받아오는 용
+		@Override
+		public LoginVO getloginSession(String id) {
+			
+			LoginVO loginUser = sqlsession.selectOne("jdhresns.getloginSession", id);
+			
+			return loginUser;
 		}
 
 	

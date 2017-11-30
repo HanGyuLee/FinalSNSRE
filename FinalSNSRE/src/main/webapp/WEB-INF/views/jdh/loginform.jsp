@@ -38,14 +38,14 @@
     	
     	if(${sessionScope.loginuser != null}) {
 			 alert("이미 로그인을 하신 상태 입니다 !!");
-			 $("#userid").val(""); 
+			 $("#id").val(""); 
 			 $("#pwd").val("");
-			 $("#userid").focus();
+			 $("#id").focus();
 			 event.preventDefault();
 			 return; 
 		 }
 		 
-		 var userid = $("#userid").val(); 
+		 var userid = $("#id").val(); 
 		 var pwd = $("#pwd").val(); 
 		
 		 if(userid.trim()=="") {
@@ -64,7 +64,7 @@
 			 return;
 		 }
 
-		 document.loginFrm.action = "loginEnd.re";
+		 document.loginFrm.action = "/resns/loginEnd.re";
 		 document.loginFrm.method = "post";
 		 document.loginFrm.submit();
 		 
@@ -85,7 +85,7 @@
 			</div>
 			
 			<div class="mydiv" style="margin-left: 5%;">
-				<input class="mydisplay form-control" type="text" name="userid" id="userid" size="20" />
+				<input class="mydisplay form-control" type="text" name="id" id="id" size="20" />
 				<input class="mydisplay form-control" style="margin-top: 15px;" type="password" name="pwd" id="pwd" size="20" /> 
 			</div>
 			

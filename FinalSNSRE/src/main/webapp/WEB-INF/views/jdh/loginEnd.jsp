@@ -7,7 +7,7 @@
 
 	<c:if test="${n == 1 && empty gobackURL }">
 		alert("로그인 성공!!");
-		location.href="<%=request.getContextPath() %>/loginmain.action";
+		location.href="<%=request.getContextPath() %>/loginmain.re";
 	</c:if>
 		
 	<c:if test="${n == 1 && not empty gobackURL }">
