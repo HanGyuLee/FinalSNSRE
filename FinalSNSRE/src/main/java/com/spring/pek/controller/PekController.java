@@ -15,7 +15,7 @@ public class PekController {
 		// 페이징 처리
 		// 인기글 select 메소드 (비공개 글은 뜨지 않도록)
 		
-		return "";
+		return "/pek/mainBoard.tiles";
 	}
 	
 	
