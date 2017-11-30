@@ -8,17 +8,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class PekController {
 	
 	
-	// 비로그인 글 목록 보기
-	@RequestMapping(value = "/mainBoard.re", method ={RequestMethod.GET})
-	public String mainBoard() {
-		
-		// 페이징 처리
-		// 인기글 select 메소드 (비공개 글은 뜨지 않도록)
-		
-		return "/pek/mainBoard.tiles";
-	}
-	
-	
 	// 글 1개 보기 (상세페이지)
 	@RequestMapping(value = "/detailBoard.re", method = {RequestMethod.GET})
 	public String detailBoard() {
