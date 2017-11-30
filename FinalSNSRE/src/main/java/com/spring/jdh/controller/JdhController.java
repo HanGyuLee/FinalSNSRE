@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.spring.jdh.model.LoginVO;
+import com.spring.jdh.model.UserVO;
 import com.spring.jdh.service.InterSnsService;
 
 @Controller
@@ -46,7 +47,7 @@ public class JdhController {
 		
 		// ==== #45. 로그인 완료 요청. =====
 		@RequestMapping(value="/loginEnd.re", method={RequestMethod.POST})	
-		public String loginEnd(HttpServletRequest req, HttpSession session, LoginVO loginvo) {
+		public String loginEnd(HttpServletRequest req, HttpSession session, UserVO uservo, LoginVO loginUser) {
 			
 			String id = req.getParameter("id"); // 뷰단에서 가져온값
 			String pwd = req.getParameter("pwd");
@@ -71,14 +72,16 @@ public class JdhController {
 			req.setAttribute("n", n);
 			
 			if(n == 1){
-				loginvo = service.getloginMember(id);
-				session.setAttribute("loginvo", loginvo);
+				uservo = service.getloginMember(id);
+				loginUser = service.getloginSession(id);
+				req.setAttribute("uservo", uservo);
+				session.setAttribute("loginUser", loginUser);
 				
 				// 세션에 저장된 돌아갈 페이지(url)정보를 불러온다.
 				String gobackURL = (String)session.getAttribute("gobackURL");
 				req.setAttribute("gobackURL", gobackURL);
 				
-				session.removeAttribute("gobackURL");
+				//session.removeAttribute("gobackURL");
 			}
 			
 			return "jdh/loginEnd.tiles";
@@ -87,16 +90,16 @@ public class JdhController {
 		}// end of String loginEnd()-------------------
 			
 		
-		// ==== #53. 로그아웃 완료 요청. =====
-			@RequestMapping(value="/logout.re", method={RequestMethod.GET})
+	// ==== #53. 로그아웃 완료 요청. =====
+		@RequestMapping(value="/logout.re", method={RequestMethod.GET})
 		public String logout(HttpSession session) {
-				
-				session.invalidate();	// 몽땅 지움
-				// session.removeAttribute("loginuser");	// 특정한것만 지움
-				
-				return "jdh/logout.tiles";
-				// WEB-INF/views/login/logout.jsp 파일을 생성한다.
-				
-			}// end of String logout()
+			
+			session.invalidate();	// 몽땅 지움
+			// session.removeAttribute("loginuser");	// 특정한것만 지움
+			
+			return "jdh/logout.tiles";
+			// WEB-INF/views/login/logout.jsp 파일을 생성한다.
+			
+		}// end of String logout()
 	
 }

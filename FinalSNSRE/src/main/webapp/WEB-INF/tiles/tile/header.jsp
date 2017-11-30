@@ -74,18 +74,18 @@
 				<li><img src="<%=request.getContextPath()%>/resources/images/follow_black.png">새로운팔로워</li>
 			
 		</ul></li>
-		<li style="margin-left:85%;margin-top:10px; margin-top:-60px; display:inline;"><a href="<%=request.getContextPath()%>/mypage.re"><img src="<%=request.getContextPath()%>/resources/images/user_white.png"></a></li>
+		<li style="margin-left:85%;margin-top:10px; margin-top:-60px; display:inline;"><a href="<%=request.getContextPath()%>/login.re"><img src="<%=request.getContextPath()%>/resources/images/user_white.png"></a></li>
 		
 		<!-- ===== #52. 로그인 성공한 사용자 성명 출력하기. ===== -->
-		<c:if test="${sessionScope.loginuser.status < 9 }">
+		<c:if test="${sessionScope.loginUser.login_status < 9 }">
 		<li style="margin-left: 35%; margin-top: 1%;">
-		♥ 환영합니다~ <span style="color: navy; font-weight: bold;">${sessionScope.loginuser.login_name}</span> 님  ♥
+		♥ 환영합니다~ <span style="color: navy; font-weight: bold;">${sessionScope.loginUser.login_name}</span> 님  ♥
 		</li>
 		</c:if>
 		
-		<c:if test="${sessionScope.loginuser.status >= 9}">
+		<c:if test="${sessionScope.loginUser.login_status >= 9}">
 		<li style="margin-left: 15%; margin-top: 1%;">
-		♥ 환영합니다~ <span style="color: navy; font-weight: bold;">${sessionScope.loginuser.login_name}</span> 님 ♥
+		♥ 환영합니다~ <span style="color: navy; font-weight: bold;">${sessionScope.loginUser.login_name}</span> 님 ♥
 		</li>
 		</c:if>
 		
