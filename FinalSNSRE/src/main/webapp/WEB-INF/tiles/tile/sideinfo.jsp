@@ -15,9 +15,14 @@
 
 <script type="text/javascript">
 
+function go() {
+	location.href="";
+}
+
+
 	$(document).ready(function() {
 		loopshowNowTime();
-		showRank();
+		
 	}); // end of ready(); ---------------------------------
 
 	function showNowTime() {
