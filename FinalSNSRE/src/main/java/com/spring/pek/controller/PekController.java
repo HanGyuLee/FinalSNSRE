@@ -1,22 +1,17 @@
 package com.spring.pek.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.spring.pek.service.InterPekService;
+
 @Controller
 public class PekController {
 	
-	
-	// 비로그인 글 목록 보기
-	@RequestMapping(value = "/mainBoard.re", method ={RequestMethod.GET})
-	public String mainBoard() {
-		
-		// 페이징 처리
-		// 인기글 select 메소드 (비공개 글은 뜨지 않도록)
-		
-		return "/pek/mainBoard.tiles";
-	}
+	@Autowired
+	private InterPekService service;
 	
 	
 	// 글 1개 보기 (상세페이지)
