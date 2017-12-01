@@ -6,17 +6,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
 <script type="text/javascript">
 
 	$(document).ready(function(){
-		
+
 		$("#popBoard").click(function(){
 			
-			var form_data = {"seq_tbl_board" : $("#seq_tbl_board").val(),
-							"fk_login_id" : $("#fk_login_id").val()
-							};
+			showUser();	// 한 명의 별명과 프사 보기
+			showRe();	// 한 게시글의 댓글 보기
+			showTag();	// 한 게시글의 태그 보기
+			showLoc();	// 한 게시글의 위치주소 보기
+	
 			
-			
+		});
+		
+		
+	});
+	
+	
+	function showUser() {
+		
+		var form_data = {"fk_login_id" : $("#fk_login_id").val()};
+
 			$.ajax({
 				
 				url: "/resns/detailBoard.re",
@@ -32,11 +44,74 @@
 				}
 				
 			});
-			
-		});
 		
+	}
+	
+	function showRe() {
 		
-	});
+		var form_data = {"seq_tbl_board" : $("#seq_tbl_board").val()};
+
+			$.ajax({
+				
+				url: "/resns/detailBoard.re",
+				type: "GET",
+				data: form_data,  
+				dataType: "JSON", 
+				success: function(data) {
+				
+					alert(".");
+					
+				}, error: function() {
+					
+				}
+				
+			});
+		
+	}
+	
+	function showTag() {
+		
+		var form_data = {"seq_tbl_board" : $("#seq_tbl_board").val()};
+
+			$.ajax({
+				
+				url: "/resns/detailBoard.re",
+				type: "GET",
+				data: form_data,  
+				dataType: "JSON", 
+				success: function(data) {
+				
+					alert(".");
+					
+				}, error: function() {
+					
+				}
+				
+			});
+		
+	}
+	
+	function showLoc() {
+		
+		var form_data = {"seq_tbl_board" : $("#seq_tbl_board").val()};
+
+			$.ajax({
+				
+				url: "/resns/detailBoard.re",
+				type: "GET",
+				data: form_data,  
+				dataType: "JSON", 
+				success: function(data) {
+				
+					alert(".");
+					
+				}, error: function() {
+					
+				}
+				
+			});
+		
+	}
 
 </script>
 </head>
@@ -44,6 +119,7 @@
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<section>
+ 
 	
 	 <c:forEach items="${boardList}" var="map" varStatus="status">
 
@@ -65,6 +141,7 @@
 		                <div style="border: 1px solid red; width: 30%; height: 350px; float: right;">
 		                </div>
 		                <div style="border: 1px solid green; width: 68%; height: 120px; float: left;">
+		                <span style="line-height: 180%;">${map.BOARD_CONTENT}</span>
 		                </div>
 		                <div style="border: 1px solid purple; width: 30%; height: 120px; float: right;">
 		                </div>

@@ -12,18 +12,21 @@
  		<result property="SEQ_TBL_BOARD" 	column="seq_tbl_board" 	javaType="String" />
  		<result property="BOARD_HEART" 	column="board_heart" 	javaType="String" />
  		<result property="FK_LOGIN_ID" 	column="fk_login_id" 	javaType="String" />
+ 		<result property="BOARD_CONTENT" 	column="board_content" 	javaType="String" />
+ 		<result property="BOARD_TIME" 	column="board_time" 	javaType="String" />
+ 		<result property="BOARD_RECNT" 	column="board_recnt" 	javaType="String" />
  		<result property="BIMG_FILENAME" 	column="bimg_filename" 	javaType="String" />
 	</resultMap>
 	<select id="getBoardList" resultMap="getBoardListMap">
 	
 	
-		select rno, seq_tbl_board, board_heart, fk_login_id, bimg_filename
+		select rno, seq_tbl_board, board_heart, fk_login_id, board_content, board_time, board_recnt, bimg_filename
 				from 
 				(
 				select rownum as rno, V.*
 				from
 				(
-				select B.seq_tbl_board, B.board_heart, B.fk_login_id, I.bimg_filename
+				select B.seq_tbl_board, B.board_heart, B.fk_login_id, B.board_content, B.board_time, B.board_recnt, I.bimg_filename
 				from tbl_board B left join tbl_bimage I
 				on B.seq_tbl_board = I.seq_tbl_board
 				where B.board_status = 0

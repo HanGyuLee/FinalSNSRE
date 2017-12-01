@@ -36,7 +36,7 @@ public class PekController {
 	@RequestMapping(value = "/detailBoard.re", method = {RequestMethod.GET})
 	public String detailBoard(HttpServletRequest req) {
 		
-		// 아이디도 넘겨줘야 함
+		String fk_login_id = req.getParameter("fk_login_id");
 		String seq_tbl_board = req.getParameter("seq_tbl_board");
 		
 		
@@ -49,15 +49,6 @@ public class PekController {
 		tbl_tag : 태그
 		tbl_map : 위치*/
 		
-		
-		// 글 1개 select 메소드
-		// 댓글 보여주기 select 메소드
-		// 댓글 갯수 보여주기 select 메소드
-		// 하트 보여주기 select 메소드
-		// 하트 갯수 보여주기 select 메소드
-		// 위치 보여주기 select 메소드
-		// 게시물 이미지 보여주기 select 메소드
-		// 태그 보여주기 select 메소드
 		
 		return "";
 		// 글 내용 더보기
